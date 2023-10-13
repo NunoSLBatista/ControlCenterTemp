@@ -1,0 +1,124 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.control-center-grid {
+  background: url("https://uploads.codesandbox.io/uploads/user/dad4f6c8-47d8-4aa2-bdbe-07742762e99b/Jj82-background.png")
+    no-repeat center;
+  background-size: cover;
+  max-width: 600px;
+  min-height: 800px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 70px);
+  grid-gap: 15px;
+  padding: 15px;
+  position: relative;
+}
+
+.control-center-grid::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(
+    10px
+  ); /* FF does not support this: https://caniuse.com/#search=backdrop-filter */
+}
+
+.grid-item {
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 18px;
+  padding: 15px;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.connections {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 15px;
+  grid-row: span 2;
+  grid-column: span 2;
+  justify-items: center;
+}
+
+.connections div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  height: 54px;
+  width: 54px;
+}
+
+.music {
+  display: grid;
+  grid-column: span 2;
+  grid-row: span 2;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 15px;
+  justify-items: center;
+}
+
+.music span {
+  color: #ffffff;
+  display: flex;
+  font-weight: 700;
+  justify-content: center;
+  align-items: center;
+  grid-column: 1 / -1;
+}
+
+.brightness,
+.volume {
+  display: grid;
+  justify-content: center;
+  grid-row: span 2;
+  justify-content: center;
+  align-items: flex-end;
+  position: relative;
+}
+
+.brightness::before,
+.volume::before {
+  content: "";
+  position: absolute;
+  background: #fff;
+  width: 100%;
+  height: 50%;
+  border-radius: 0 0 18px 18px;
+}
+
+.brightness svg,
+.volume svg {
+  z-index: 1;
+}
+
+.screen {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column: span 2;
+  align-items: center;
+  justify-items: center;
+}
+
+.screen span {
+  text-align: left;
+  color: #ffffff;
+}
+
+/* Colors, etc. */
+.connections .cellular {
+  background: #4cd964;
+}
+
+.connections .wifi,
+.connections .bluetooth {
+  background: #007aff;
+}
